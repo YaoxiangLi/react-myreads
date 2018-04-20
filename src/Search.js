@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import * as BooksAPI from 'BooksAPI'
-import BookList from 'BookList'
+import * as BooksAPI from './BooksAPI'
+import BookList from './BookList'
 
 const maxResults = 20;
 

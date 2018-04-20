@@ -1,5 +1,5 @@
 import React from 'react'
-import BookList from 'BookList'
+import BookList from './BookList'
 
 class BookShelf extends React.Component {
   render() {

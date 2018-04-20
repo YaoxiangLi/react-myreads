@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import BookShelf from 'BookShelf'
+import BookShelf from './BookShelf'
 
 const shelf = [
   {
@@ -17,7 +17,7 @@ const shelf = [
   }
 ]
 
-class MainPage extends Component {
+class MainPage extends React.Component {
   render() {
     return (
       <div className="list-books">
