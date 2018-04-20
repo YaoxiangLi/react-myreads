@@ -1,33 +1,19 @@
-import React, { Component } from 'react'
-import Book from './Book'
+import React from 'react'
+import BookList from 'BookList'
 
-class BookShelf extends Component {
-
-
+class BookShelf extends React.Component {
   render() {
-    const { title, books } = this.props
     return (
       <div className="bookshelf">
-        <h2 className="bookshelf-title">{ title }</h2>
+        <h2 className="bookshelf-title">{this.props.name}</h2>
         <div className="bookshelf-books">
-          <ol className="books-grid">
-            {books.map((book, index)=>(
-              <Book
-                imageURL={book.imageLinks}
-                title={book.title}
-                author={book.authors}
-                key={``.concat(book.id,index)}
-                shelf={book.shelf}
-                onShelfChange={(shelf)=>{
-                  this.props.onShelfChange(book.id, shelf)
-                }}
-              />
-            ))}
-          </ol>
+          <BookList
+            list={this.props.books}
+            handleShelfUpdate={this.props.handleShelfUpdate}
+          />
         </div>
       </div>
     )
-
   }
 }
 
