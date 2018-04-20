@@ -28,10 +28,11 @@ class MainPage extends React.Component {
           <div>
             { shelf.map(shelf => (
               <BookShelf
-                key={shelf.id}
-                name={shelf.name}
-                books={this.props.books.filter(book => book.shelf === shelf.id)}
-                handleShelfUpdate={this.props.handleShelfUpdate}/>
+                key={ shelf.id }
+                name={ shelf.name }
+                books={ this.props.books.filter(book => book.shelf === shelf.id) }
+                changeShelf={ this.props.changeShelf }
+              />
             ))}
           </div>
           <div className="open-search">

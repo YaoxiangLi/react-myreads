@@ -6,11 +6,11 @@ class BookList extends React.Component {
     return (
       <ol className="books-grid">
         {
-          this.props.list.map((book) =>
+          this.props.books.map((book) =>
             <Book
-              key={book.id}
-              book={book}
-              handleShelfUpdate={this.props.handleShelfUpdate}
+              key={ book.id }
+              book={ book }
+              changeShelf={ this.props.changeShelf }
             />
           )
         }
