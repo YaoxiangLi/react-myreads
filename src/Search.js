@@ -17,7 +17,12 @@ class Search extends Component {
     const index = this.state.results.indexOf(updatedBook);
     const newBook = Object.assign({}, updatedBook, { shelf: shelf });
     this.setState({
-      results: this.state.results.splice(index, 0, newBook)
+      results:
+      [
+        ...this.state.results.slice(0, index),
+        newBook,
+        ...this.state.results.slice(index + 1),
+      ]
     });
   }
 
