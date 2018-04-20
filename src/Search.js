@@ -5,11 +5,16 @@ import BookList from './BookList'
 
 class Search extends Component {
   state = {
+    query: '',
     results: []
+
   }
 
   onChange = (e) => {
-    this.searchBooks(e.target.value.trim());
+    this.setState({ query: e.target.value.trim() })
+    if (e.target.value.trim()) {
+      this.searchBooks(e.target.value.trim());
+    }
   }
 
   // use this updateResults to avoid refresh of the page
@@ -36,7 +41,7 @@ class Search extends Component {
           }
         })
         this.setState({ results: res });
-    });
+      });
   }
 
   render() {
@@ -47,6 +52,7 @@ class Search extends Component {
           <div className='search-books-input-wrapper'>
             <input
               type='text'
+              value={this.state.query}
               placeholder='Search by title or author'
               onChange={this.onChange}
             />
